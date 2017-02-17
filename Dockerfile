@@ -9,4 +9,4 @@ ADD . /app
 RUN chmod +x /app/main.py
 RUN pip install -e .
 
-ENTRYPOINT ["python", "main.py"]
+ENTRYPOINT ["python", "main.py", "5"]

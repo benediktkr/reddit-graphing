@@ -4,10 +4,16 @@ services:
     build: '.'
     links:
       - neo4j:neo4j
+    depends_on:
+      - neo4j
   neo4j:
     image: neo4j:3.0
     expose:
-      - 7474
+      - 7685 # bolt
+
+    ports:
+      - 7474:7474 # http
+
     volumes:
       - ./neo4j/data:/data
       - ./neo4j/logs:/logs
